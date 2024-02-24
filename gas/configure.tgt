@@ -129,6 +129,7 @@ case ${generic_target} in
   aarch64*-*-fuchsia*)			fmt=elf;;
   aarch64*-*-haiku*)			fmt=elf em=haiku ;;
   aarch64*-*-genode*)			fmt=elf;;
+  aarch64*-*-l4re*)			fmt=elf;;
   aarch64*-*-linux*)			fmt=elf em=linux
     case ${cpu}-${os} in
       aarch64*-linux-gnu_ilp32)		arch=aarch64:32 ;;
@@ -148,7 +149,7 @@ case ${generic_target} in
 
   arm-*-phoenix*)			fmt=elf ;;
   arm-*-elf)				fmt=elf ;;
-  arm-*-eabi* | arm-*-rtems* | arm-*-genode*)	fmt=elf em=armeabi ;;
+  arm-*-eabi* | arm-*-rtems* | arm-*-genode* | arm-*-l4re*)	fmt=elf em=armeabi ;;
   arm-*-kaos*)				fmt=elf ;;
   arm-*-conix*)				fmt=elf ;;
   arm-*-freebsd[89].* | armeb-*-freebsd[89].*)
@@ -230,6 +231,7 @@ case ${generic_target} in
   i386-*-fuchsia*)			fmt=elf ;;
   i386-*-haiku*)			fmt=elf em=haiku ;;
   i386-*-genode*)			fmt=elf ;;
+  i386-*-l4re*)				fmt=elf ;;
   i386-*-bsd*)				fmt=aout em=386bsd ;;
   i386-*-netbsd*-gnu* | \
   i386-*-knetbsd*-gnu | \

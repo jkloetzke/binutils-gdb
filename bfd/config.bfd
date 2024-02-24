@@ -273,6 +273,11 @@ case "${targ}" in
     targ_selvecs="aarch64_elf64_be_vec arm_elf32_le_vec arm_elf32_be_vec"
     want64=true
     ;;
+  aarch64-*-l4re*)
+    targ_defvec=aarch64_elf64_le_vec
+    targ_selvecs="aarch64_elf64_be_vec arm_elf32_le_vec arm_elf32_be_vec"
+    want64=true
+    ;;
   aarch64-*-cloudabi*)
     targ_defvec=aarch64_elf64_le_cloudabi_vec
     targ_selvecs=aarch64_elf64_be_cloudabi_vec
@@ -374,6 +379,10 @@ case "${targ}" in
   arm*-*-haiku*)
     targ_defvec=arm_elf32_le_vec
     targ_selvecs="arm_elf32_fdpic_le_vec arm_elf32_be_vec arm_elf32_fdpic_be_vec arm_pe_le_vec arm_pe_be_vec arm_pei_le_vec arm_pei_be_vec"
+    ;;
+  arm-*-l4re*)
+    targ_defvec=arm_elf32_le_vec
+    targ_selvecs="arm_elf32_be_vec"
     ;;
   arm-*-nacl*)
     targ_defvec=arm_elf32_nacl_le_vec
@@ -586,7 +595,7 @@ case "${targ}" in
     targ_selvecs=hppa_elf32_vec
     ;;
 
-  i[3-7]86-*-elf* | i[3-7]86-*-rtems* | i[3-7]86-*-genode*)
+  i[3-7]86-*-elf* | i[3-7]86-*-rtems* | i[3-7]86-*-genode* | i[3-7]86-*-l4re*)
     targ_defvec=i386_elf32_vec
     targ_selvecs="iamcu_elf32_vec i386_coff_vec"
     ;;
@@ -680,7 +689,7 @@ case "${targ}" in
     targ_selvecs="i386_elf32_vec iamcu_elf32_vec"
     want64=true
     ;;
-  x86_64-*-elf* | x86_64-*-rtems* | x86_64-*-fuchsia | x86_64-*-genode*)
+  x86_64-*-elf* | x86_64-*-rtems* | x86_64-*-fuchsia | x86_64-*-genode* | x86_64-*-l4re*)
     targ_defvec=x86_64_elf64_vec
     targ_selvecs="i386_elf32_vec iamcu_elf32_vec x86_64_elf32_vec"
     case "${targ}" in
